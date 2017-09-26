@@ -8,13 +8,13 @@ namespace Algorithms.Tree
 
 		bool is_root = false;
 
-		Node<T> left_child;
-		Node<T> right_child;
+		public Node<T> left_child;
+		public Node<T> right_child;
 
-		Node<T> parent;
+		public Node<T> parent;
 
-		int height;
-		int depth;
+		public int height;
+		public int depth;
 
 		public bool isIs_root()
 		{

@@ -5,18 +5,18 @@ namespace Algorithms.Tree
     public class Tree<T>
     {
 
-		Node<T> root;
+		Node<int> root;
 
 		bool is_balancing = false;
 
-		public Tree(Node<T> root)
+		public Tree(Node<int> root)
 		{
 			this.root = root;
 			root.height = 0; // increases by one on adding additional element to either side of the tree (revisit for balanced tree)
 			root.depth = 0; // remains the same since root will be highest level node always
 		}
 
-		public Tree(Node<T> root, bool is_balancing)
+		public Tree(Node<int> root, bool is_balancing)
 		{
 			this.is_balancing = is_balancing;
 			this.root = root;
@@ -24,7 +24,7 @@ namespace Algorithms.Tree
 			root.depth = 0; // remains the same since root will be highest level node always
 		}
 
-		public String addChild(Node<T> node)
+		public String addChild(Node<int> node)
 		{
 			node.height = 0;
 			node.depth = 0;
@@ -33,7 +33,7 @@ namespace Algorithms.Tree
 			return "";
 		}
 
-		public void addChild(Node<T> node_1, Node<T> node)
+		public void addChild(Node<int> node_1, Node<int> node)
 		{
 			if (node.getValue().compareTo(node_1.getValue()) < 0)
 			{
@@ -90,7 +90,7 @@ namespace Algorithms.Tree
 			}
 		}
 
-		public void inOrderTraversal(Node<V> root)
+		public void inOrderTraversal(Node<T> root)
 		{
 			if (root == null) return;
 
@@ -101,25 +101,25 @@ namespace Algorithms.Tree
 			return;
 		}
 
-		public void preOrderTraversal(Node<V> root)
+		public void preOrderTraversal(Node<T> root)
 		{
 			if (root == null) return;
 
 			// print left-tree, print root, print right-tree
 			preOrderTraversal(root.left_child);
-			System.out.println(root.toString());
+			Console.WriteLine(root.toString());
 			preOrderTraversal(root.right_child);
 			return;
 		}
 
-		public void postOrderTraversal(Node<V> root)
+		public void postOrderTraversal(Node<T> root)
 		{
 			if (root == null) return;
 
 			// print left-tree, print right-tree, print root 
 			postOrderTraversal(root.left_child);
 			postOrderTraversal(root.right_child);
-			System.out.println(root.toString());
+			Console.WriteLine(root.toString());
 			return;
 		}
 
@@ -131,7 +131,7 @@ namespace Algorithms.Tree
 		 * <p> To be able to rotate, the child node needs to know the parent-node's reference
 		 * @param root
 		 */
-		public void rotateTheNode(Node<V> node, String clock_or_anti)
+		/*public void rotateTheNode(Node<T> node, String clock_or_anti)
 		{
 			if (!this.is_balancing) return; // Rotation is not enabled
 
@@ -160,6 +160,6 @@ namespace Algorithms.Tree
 					if (node.right_child == null) return;
 				default: return;
 			}
-		}
+		}**/
     }
 }
