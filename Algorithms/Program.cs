@@ -6,7 +6,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tree();
         }
 
         static void Tree()
@@ -17,6 +17,10 @@ namespace Algorithms
             left.setValue(1);
 			Algorithms.Tree.Node<int> right = new Algorithms.Tree.Node<int>();
 			left.setValue(4);
+            Algorithms.Tree.Tree<int> tree = new Algorithms.Tree.Tree<int>(root);
+            tree.addChild(left);
+            tree.addChild(right);
+            tree.inOrderTraversal(root);
         }
     }
 }

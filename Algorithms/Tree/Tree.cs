@@ -35,7 +35,7 @@ namespace Algorithms.Tree
 
 		public void addChild(Node<int> node_1, Node<int> node)
 		{
-			if (node.getValue().compareTo(node_1.getValue()) < 0)
+			if (node.getValue().CompareTo(node_1.getValue()) < 0)
 			{
 				if (node_1.getLeft_child() != null)
 				{
@@ -90,7 +90,7 @@ namespace Algorithms.Tree
 			}
 		}
 
-		public void inOrderTraversal(Node<T> root)
+		public void inOrderTraversal(Node<int> root)
 		{
 			if (root == null) return;
 
@@ -101,7 +101,7 @@ namespace Algorithms.Tree
 			return;
 		}
 
-		public void preOrderTraversal(Node<T> root)
+		public void preOrderTraversal(Node<int> root)
 		{
 			if (root == null) return;
 
@@ -112,7 +112,7 @@ namespace Algorithms.Tree
 			return;
 		}
 
-		public void postOrderTraversal(Node<T> root)
+		public void postOrderTraversal(Node<int> root)
 		{
 			if (root == null) return;
 

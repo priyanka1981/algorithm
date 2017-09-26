@@ -56,7 +56,7 @@ namespace Algorithms.Tree
 		{
 			this.depth = depth;
 		}
-		public V getValue()
+		public T getValue()
 		{
 			return value;
 		}
