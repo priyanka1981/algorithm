@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 namespace Algorithms.Tree
 {
@@ -75,9 +76,18 @@ namespace Algorithms.Tree
 		
 	    public String toString()
 		{
-			return "Node [value=" + value + ", is_root=" + is_root
-					+ ", left_child=" + left_child.getValue() + ", right_child=" + right_child.getValue()
-					+ ", height=" + height + ", depth=" + depth + "]";
+            string str = "Node [value=" + value + ", is_root=" + is_root;
+            if (left_child != null)
+              str = str + ", left_child=" + left_child.getValue();
+            if (right_child != null)
+                str = str + "right_child=" + right_child.getValue();
+            str = str + ", height=" + height + ", depth=" + depth + "]";
+            return str;
+			//return "Node [value=" + value + ", is_root=" + is_root 
+					//+ ", left_child=" 
+                   // + left_child !=null?left_child.getValue():0 + ", " 
+                                               //   "right_child=" + right_child.getValue()
+					//+ ", height=" + height + ", depth=" + depth + "]";
 		}
     }
 }
