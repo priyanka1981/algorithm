@@ -18,7 +18,7 @@ namespace Algorithms
             left.setValue(2);
             Algorithms.Tree.Tree<int> tree = new Algorithms.Tree.Tree<int>(root);
 			Algorithms.Tree.Node<int> left_left = new Algorithms.Tree.Node<int>();
-			left.setValue(1);
+            left_left.setValue(1);
             tree.addChild(left);
 			tree.addChild(left_left);
 			Algorithms.Tree.Node<int> right = new Algorithms.Tree.Node<int>();
