@@ -9,6 +9,11 @@ namespace Algorithms.Graph
         {
         }
 
+        public Graph(Node<int> _root)
+        {
+            this.root = _root;
+        }
+
         public void add(Node<int> ctx,Node<int> node)
         {
             ctx.adjustancyList.Add(node);
@@ -22,6 +27,10 @@ namespace Algorithms.Graph
             {
                 Node<int> node = stack.Pop();
                 Console.WriteLine(node.data);
+                foreach (Node<int> _node in node.adjustancyList)
+                {
+                    stack.Push(_node);
+                }
             }
         }
 
@@ -32,7 +41,12 @@ namespace Algorithms.Graph
             while(queue.Count > 0)
             {
                 Node<int> node= queue.Dequeue();
-                Console.WriteLine(node.data); 
+                Console.WriteLine(node.data);
+                foreach(Node<int> _node in node.adjustancyList)
+                {
+                    queue.Enqueue(_node);
+				}
+
             }
         }
     }
