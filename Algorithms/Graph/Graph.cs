@@ -1,10 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace Algorithms.Graph
 {
-    public class Graph
+    public class Graph<T>
     {
+        public Node<int> root;
         public Graph()
         {
+        }
+
+        public void add(Node<int> ctx,Node<int> node)
+        {
+            ctx.adjustancyList.Add(node);
+        }
+
+        public void DFS()
+        {
+            Stack<Node<int>> stack = new Stack<Node<int>>();
+            stack.Push(root);
+            while(stack.Count>0)
+            {
+                Node<int> node = stack.Pop();
+                Console.WriteLine(node.data);
+            }
+        }
+
+        public void BFS()
+        {
+            Queue<Node<int>> queue = new Queue<Node<int>>();
+            queue.Enqueue(root); 
+            while(queue.Count > 0)
+            {
+                Node<int> node= queue.Dequeue();
+                Console.WriteLine(node.data); 
+            }
         }
     }
 }
