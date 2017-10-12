@@ -6,7 +6,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Graph();
+            General();
         }
 
         static void Tree()
@@ -46,6 +46,25 @@ namespace Algorithms
             graph.BFS();
             graph.DFS();
         }
+
+        static void General()
+        {
+            Algorithms.General.General generalClass = new Algorithms.General.General();
+            int n = Convert.ToInt16(Console.ReadLine());
+            int factorail = generalClass.Factorial(n);
+            Console.WriteLine("Factorial of {0} is {1}" ,n , factorail.ToString());
+            int factorial_nonrec = generalClass.Factorial_NonRec(n);
+			Console.WriteLine("Factorial of {0} is {1}", n, factorial_nonrec.ToString());
+            int fib = generalClass.Fibonnaci(n);
+            Console.WriteLine("Fibonnaci series result {0} ", fib.ToString());
+            int fib_nonRec = generalClass.Fibonnaci_Nonrec(n);
+			Console.WriteLine("Fibonnaci series result {0} ", fib_nonRec.ToString());
+            string str = Console.ReadLine();
+            bool retbool = generalClass.palindrome(str);
+            Console.WriteLine("Palindrome series result {0}", retbool);
+
+		}
+      
 		
     }
 }

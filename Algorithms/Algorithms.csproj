@@ -8,5 +8,6 @@
   <ItemGroup>
     <Folder Include="Tree\" />
     <Folder Include="Graph\" />
+    <Folder Include="General\" />
   </ItemGroup>
 </Project>
