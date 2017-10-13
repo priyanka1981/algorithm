@@ -9,5 +9,6 @@
     <Folder Include="Tree\" />
     <Folder Include="Graph\" />
     <Folder Include="General\" />
+    <Folder Include="Amazon\" />
   </ItemGroup>
 </Project>

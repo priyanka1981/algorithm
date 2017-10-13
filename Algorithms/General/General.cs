@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Collections.Generic;
 namespace Algorithms.General
 {
     public class General
@@ -66,5 +68,48 @@ namespace Algorithms.General
             }
             return true;
         }
+
+        public string Reverse(string str)
+        {
+            //Reverse this string 1 + 2 * 3 - 20.Note: 20 must be retained as is.
+            //Expected output: 20 - 3 * 2 + 1
+            StringBuilder result = new StringBuilder();
+            HashSet<string> operator_set = new HashSet<string>();
+            operator_set.Add("+");
+            operator_set.Add("-");
+            operator_set.Add("*");
+            operator_set.Add("/");
+            operator_set.Add("%");
+            //string[] operator_list = { "+", "*", "%", "/", "-" };
+            Stack<string> stack = new Stack<string>();
+			StringBuilder strneww = new StringBuilder();
+            for (int i = 0; i <= str.Length - 1;i++)
+                {
+                int retNum;
+                if (int.TryParse(str[i].ToString(),System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum))
+                {
+                    strneww.Append(str[i].ToString());
+                }
+
+				/* if (!string.IsNullOrEmpty(str[i + 1].ToString()) && operator_set.Contains(str[i+1].ToString())
+				 {
+					 strneww.Append(str[i].ToString());
+
+				 }*/
+				if (operator_set.Contains(str[i].ToString())|| i==str.Length-1)
+                {
+                    stack.Push(strneww.ToString());
+                    strneww.Clear();
+                }
+                if (operator_set.Contains(str[i].ToString()))
+                    stack.Push(str[i].ToString());
+                }
+            foreach(string sh in stack)
+            {
+                result.Append(sh);
+            }
+            return result.ToString();
+
+		}
     }
 }

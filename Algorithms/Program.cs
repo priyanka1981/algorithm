@@ -6,7 +6,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            General();
+            Amazon();
         }
 
         static void Tree()
@@ -50,20 +50,60 @@ namespace Algorithms
         static void General()
         {
             Algorithms.General.General generalClass = new Algorithms.General.General();
-            int n = Convert.ToInt16(Console.ReadLine());
-            int factorail = generalClass.Factorial(n);
-            Console.WriteLine("Factorial of {0} is {1}" ,n , factorail.ToString());
-            int factorial_nonrec = generalClass.Factorial_NonRec(n);
-			Console.WriteLine("Factorial of {0} is {1}", n, factorial_nonrec.ToString());
-            int fib = generalClass.Fibonnaci(n);
-            Console.WriteLine("Fibonnaci series result {0} ", fib.ToString());
-            int fib_nonRec = generalClass.Fibonnaci_Nonrec(n);
-			Console.WriteLine("Fibonnaci series result {0} ", fib_nonRec.ToString());
-            string str = Console.ReadLine();
-            bool retbool = generalClass.palindrome(str);
-            Console.WriteLine("Palindrome series result {0}", retbool);
+            /*  int n = Convert.ToInt16(Console.ReadLine());
+			 int factorail = generalClass.Factorial(n);
+			 Console.WriteLine("Factorial of {0} is {1}" ,n , factorail.ToString());
+			 int factorial_nonrec = generalClass.Factorial_NonRec(n);
+			 Console.WriteLine("Factorial of {0} is {1}", n, factorial_nonrec.ToString());
+			 int fib = generalClass.Fibonnaci(n);
+			 Console.WriteLine("Fibonnaci series result {0} ", fib.ToString());
+			 int fib_nonRec = generalClass.Fibonnaci_Nonrec(n);
+			 Console.WriteLine("Fibonnaci series result {0} ", fib_nonRec.ToString());
+			 string str = Console.ReadLine();
+			 bool retbool = generalClass.palindrome(str);
+			 Console.WriteLine("Palindrome series result {0}", retbool);
+			   string[] array ={"civic","deified","deleveled","devoved","dewed",
+				"Hannah",
+				"kayak",
+				"level",
+				"madam",
+				"racecar",
+				"radar",
+				"redder",
+				"refer",
+				"repaper",
+				"reviver",
+				"rotator",
+				"rotor",
+				"sagas",
+				"solos",
+				"sexes",
+				"stats",
+				"tenet","Dot",
+				"Net",
+				"Perls",
+				"Is",
+				"Not",
+				"A",
+				"Palindrome",
+				""
+				};
 
+				foreach (string value in array)
+				{
+					Console.WriteLine("{0} = {1}", value, generalClass.palindrome(value));
+
+				}*/ 
+            string stringToReverse = Console.ReadLine();
+            string strReverse = generalClass.Reverse(stringToReverse);
+            Console.WriteLine("Reverse String is {0}",strReverse);
 		}
+
+        static void Amazon()
+        {
+            Algorithms.Amazon.amazon amazon = new Algorithms.Amazon.amazon();
+            bool retbool = amazon.isBalanceBraces("(12)");
+        }
       
 		
     }
