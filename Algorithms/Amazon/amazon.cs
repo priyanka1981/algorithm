@@ -19,7 +19,7 @@ namespace Algorithms.Amazon
             dicSet.Add('<','>'); 
             Stack<char> stack = new Stack<char>();
             foreach(char ch in str){
-                if(dicSet.ContainsKey(ch){
+                if(dicSet.ContainsKey(ch)){
                    stack.Push(ch); 
                 }
                 if (dicSet.ContainsValue(ch) && stack.Count > 0)
