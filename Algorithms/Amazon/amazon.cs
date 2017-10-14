@@ -61,5 +61,20 @@ namespace Algorithms.Amazon
             return retstr.ToString();
 
         }
-    }
+
+        public string Reversewords(string str)
+        {
+
+            // Reverse the words in string eg. 'The Sky is Blue'.then print 'Blue is Sky The'.
+           string[] array = str.Split(' ');
+            StringBuilder retstring = new StringBuilder();
+            for (int i = array.Length-1; i >=0;i--)
+            {
+                retstring.Append(array[i].ToString() + " ");
+            }
+            return retstring.ToString();
+        }
+
+
+	}
 }

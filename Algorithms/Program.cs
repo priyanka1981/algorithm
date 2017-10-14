@@ -106,8 +106,10 @@ namespace Algorithms
 			/* bool retbool = amazon.isBalanceBraces(str);
 			 Console.WriteLine("is string is balance {0}", retbool.ToString());*/
 			string str = Console.ReadLine();
-            string countstring = amazon.CountAlphabets(str);
-            Console.WriteLine("Count of string {0}", countstring);
+            // string countstring = amazon.CountAlphabets(str);
+            // Console.WriteLine("Count of string {0}", countstring);
+            string reverseword = amazon.Reversewords("The sky is blue");
+            Console.WriteLine("Reverse wwords is {0}", reverseword);
         }
       
 		
