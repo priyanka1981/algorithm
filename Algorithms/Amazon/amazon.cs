@@ -22,8 +22,10 @@ namespace Algorithms.Amazon
                 if(dicSet.ContainsKey(ch)){
                    stack.Push(ch); 
                 }
-                if (dicSet.ContainsValue(ch) && stack.Count > 0)
+                if(stack.Count>0 && dicSet.ContainsKey(ch)&& stack.Contains(dicSet[ch]))
+                {
                     stack.Pop();
+                }
             }
             if (stack.Count > 0)
                 return false;

@@ -102,7 +102,9 @@ namespace Algorithms
         static void Amazon()
         {
             Algorithms.Amazon.amazon amazon = new Algorithms.Amazon.amazon();
-            bool retbool = amazon.isBalanceBraces("(12)");
+            string str= Console.ReadLine();
+            bool retbool = amazon.isBalanceBraces(str);
+            Console.WriteLine("is string is balance {0}", retbool.ToString());
         }
       
 		
