@@ -13,23 +13,53 @@ namespace Algorithms.Amazon
         {
             
             Dictionary<char, char> dicSet = new Dictionary<char,char>();
-            dicSet.Add('(', ')');
-            dicSet.Add('[', ']');
-            dicSet.Add('{', '}');
-            dicSet.Add('<','>'); 
+            dicSet.Add(')', '(');
+            dicSet.Add(']', '[');
+            dicSet.Add('}', '{');
+            dicSet.Add('>','<');
+            HashSet<char> hashset = new HashSet<char>();
+            hashset.Add('(');
+            hashset.Add('[');
+            hashset.Add('{');
+            hashset.Add('<');
             Stack<char> stack = new Stack<char>();
             foreach(char ch in str){
-                if(dicSet.ContainsKey(ch)){
+                if(hashset.Contains(ch)){
                    stack.Push(ch); 
                 }
-                if(stack.Count>0 && dicSet.ContainsKey(ch)&& stack.Contains(dicSet[ch]))
+                else if(dicSet.ContainsKey(ch))
                 {
-                    stack.Pop();
+                    char retChar = stack.Peek();
+
+                    //char ch_open = dicSet[ch];
+
+                    if (retChar == dicSet[ch])
+                        stack.Pop();
                 }
             }
             if (stack.Count > 0)
                 return false;
             return true;
+        }
+
+        public string CountAlphabets(string str)
+        {
+            int[] array = new int[25];
+            foreach(char ch in str){
+                array[ch-'a'] += 1;
+            }
+            StringBuilder retstr = new StringBuilder();
+            for (int i = 0; i < 25;i++)
+            {
+                if (array[i] > 0)
+                {
+                    char chr = Convert.ToChar('a' + i);
+                    retstr.Append(chr.ToString()+array[i]);
+                }
+            }
+
+            return retstr.ToString();
+
         }
     }
 }

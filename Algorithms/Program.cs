@@ -101,10 +101,13 @@ namespace Algorithms
 
         static void Amazon()
         {
-            Algorithms.Amazon.amazon amazon = new Algorithms.Amazon.amazon();
-            string str= Console.ReadLine();
-            bool retbool = amazon.isBalanceBraces(str);
-            Console.WriteLine("is string is balance {0}", retbool.ToString());
+			Algorithms.Amazon.amazon amazon = new Algorithms.Amazon.amazon();
+
+			/* bool retbool = amazon.isBalanceBraces(str);
+			 Console.WriteLine("is string is balance {0}", retbool.ToString());*/
+			string str = Console.ReadLine();
+            string countstring = amazon.CountAlphabets(str);
+            Console.WriteLine("Count of string {0}", countstring);
         }
       
 		
