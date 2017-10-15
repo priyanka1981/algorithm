@@ -110,6 +110,7 @@ namespace Algorithms
             // Console.WriteLine("Count of string {0}", countstring);
             string reverseword = amazon.Reversewords("The sky is blue");
             Console.WriteLine("Reverse wwords is {0}", reverseword);
+            string reverse = amazon.ReversewordsCore("The Sky is Blue");
         }
       
 		
