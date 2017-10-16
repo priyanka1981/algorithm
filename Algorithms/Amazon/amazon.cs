@@ -6,6 +6,7 @@ namespace Algorithms.Amazon
 {
     public class amazon
     {
+        private static amazon instance;
         public amazon()
         {
         }
@@ -98,25 +99,68 @@ namespace Algorithms.Amazon
 		}
 
         // find if two words ara anagrams of each other - mary and army
-        public void areAnagram(String str1, String str2) {
+        public bool areAnagram(String str1, String str2) {
             // HINT: use the integer array to count charactes in both the strings
+            if (str1.Length != str2.Length)
+                return false;
+            else
+            {
+                int[] array = new int[26];
+                foreach(char ch in str1){
+                    array[ch - 'a'] += 1;
+                }
+                foreach(char cha in str2)
+                {
+                    if (array[cha-'a'] == 0) return false;
+                }
+                return true;
+            }
+
         }
 
         // find if a string is a substring of the larger string 
         // substr - I saw a blue cat
         // largerstr - On a cloudy night I saw a blue cat jumping in the street
-        public void hasSubString(String substr, String largerstr) {
+        public bool hasSubString(String substr, String largerstr) {
             // this is done with string movement
             // traverse the larger string, and start finding chars in smaller string until you have found it all
             // if you fail to match, then move the pointer further and do the search again
+            int j = 0;
+            StringBuilder stringComp = new StringBuilder();
+            for (int i = 0; i <= largerstr.Length - 1; i++)
+            {
+                if (j <= substr.Length - 1 && largerstr[i] == substr[j])
+                {
+                    stringComp.Append(largerstr[i]);
+                    if (string.Compare(stringComp.ToString(), substr) == 0)
+                        return true;
+                    j++;
+
+                }
+                else if(i== largerstr.Length-1)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         // find the first duplicate character in a string
         // this is a long string: "i" is the first duplicate character
-        public void printFirstDuplicateChar(String str) {
+        public string printFirstDuplicateChar(String str)
+        {
             // similar to the int array, you can use a bit array
             // set the bit to true when you find a character
             // if the bit is already true: you found first duplicate char
+            bool[] byte_array = new bool[25];
+            foreach(char ch in str){
+                if (byte_array[ch - 'a'])
+                    return "First duplicate" + ch.ToString();
+                else
+                    byte_array[ch - 'a'] = true;
+            }
+            return "No duplicate char";
+                                         
         }
 
         // find whether a string only has numbers or numbers and alphabets or numbers/alphabets/special-chars
@@ -125,7 +169,7 @@ namespace Algorithms.Amazon
         //123*xyz456
         public void findPattern(String str) {
             // HINT: dont use any char traversal or hashset hashmap or anything
-            if(true) {
+            /*if(true) {
                 // print only numbers
             } else if (true) {
                 // print numbers and alphabets
@@ -133,7 +177,7 @@ namespace Algorithms.Amazon
                 // numbers, alphabets and spcl chars
             } else {
                 // none
-            }
+            }*/
         }
 
         // count number of vowels and non-vowels in a string
@@ -144,12 +188,14 @@ namespace Algorithms.Amazon
         // MAKE THIS CLASS A SINGLETON
         // understand this -- they ask it in the interview
         public amazon getInstance(){
-            return null;
+            if (instance != null)
+                instance = new amazon();
+            return instance;
         }
 
         // sort a file (around 100 gigs memory size) which has order numbers separated by space
-        public void sortGiganticFile(File file) {
+      //  public void sortGiganticFile(File file) {
             // what can you do? would you every load this in the VM memory?
-        }
+       // }
 	}
 }

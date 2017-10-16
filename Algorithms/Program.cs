@@ -108,9 +108,14 @@ namespace Algorithms
 			string str = Console.ReadLine();
             // string countstring = amazon.CountAlphabets(str);
             // Console.WriteLine("Count of string {0}", countstring);
-            string reverseword = amazon.Reversewords("The sky is blue");
-            Console.WriteLine("Reverse wwords is {0}", reverseword);
-            string reverse = amazon.ReversewordsCore("The Sky is Blue");
+            //string reverseword = amazon.Reversewords("The sky is blue");
+            //Console.WriteLine("Reverse wwords is {0}", reverseword);
+            //string reverse = amazon.ReversewordsCore("The Sky is Blue");
+            // bool ret = amazon.areAnagram("abc","cbz");
+            // Console.WriteLine("Are Anagram {0}", ret.ToString());
+            // bool retIsSub = amazon.hasSubString("I saw a blue cat","On a cloudy night I see I saw a blue cat jumping in the street");
+            // Console.WriteLine("Has Substring {0}", retIsSub.ToString());
+            Console.WriteLine("First duplicate {0}", amazon.printFirstDuplicateChar(str));
         }
       
 		
