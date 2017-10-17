@@ -6,7 +6,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Amazon();
+            CrakingCode();
         }
 
         static void Tree()
@@ -116,6 +116,12 @@ namespace Algorithms
             // bool retIsSub = amazon.hasSubString("I saw a blue cat","On a cloudy night I see I saw a blue cat jumping in the street");
             // Console.WriteLine("Has Substring {0}", retIsSub.ToString());
             Console.WriteLine("First duplicate {0}", amazon.printFirstDuplicateChar(str));
+        }
+
+        static void CrakingCode()
+        {
+            Algorithms.CrakingThecoding.CrakingCode craking = new CrakingThecoding.CrakingCode();
+            bool ret = craking.UniqueChar("priyanka");
         }
       
 		

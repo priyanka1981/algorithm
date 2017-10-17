@@ -10,5 +10,6 @@
     <Folder Include="Graph\" />
     <Folder Include="General\" />
     <Folder Include="Amazon\" />
+    <Folder Include="CrakingThecoding\" />
   </ItemGroup>
 </Project>

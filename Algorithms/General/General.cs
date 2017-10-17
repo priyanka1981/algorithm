@@ -74,7 +74,7 @@ namespace Algorithms.General
             //Reverse this string 1 + 2 * 3 - 20.Note: 20 must be retained as is.
             //Expected output: 20 - 3 * 2 + 1
             StringBuilder result = new StringBuilder();
-            HashSet<string> operator_set = new HashSet<string>();
+                HashSet<string> operator_set = new HashSet<string>();
             operator_set.Add("+");
             operator_set.Add("-");
             operator_set.Add("*");
