@@ -11,5 +11,9 @@
     <Folder Include="General\" />
     <Folder Include="Amazon\" />
     <Folder Include="CrakingThecoding\" />
+    <Folder Include="Cassandra\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 </Project>
