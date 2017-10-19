@@ -121,6 +121,7 @@ namespace Algorithms
         static void CrakingCode()
         {
             Algorithms.CrakingThecoding.CrakingCode craking = new CrakingThecoding.CrakingCode();
+            craking.Permutation("abc");
             bool ret = craking.UniqueChar("priyanka");
         }
       
