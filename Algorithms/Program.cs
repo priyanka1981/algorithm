@@ -6,7 +6,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            CrakingCode();
+            Citadel();
         }
 
         static void Tree()
@@ -124,6 +124,21 @@ namespace Algorithms
             craking.Permutation("abc");
             bool ret = craking.UniqueChar("priyanka");
         }
+
+        static void sort()
+        {
+            Algorithms.Sorting.BubbleSort bubblesort = new Sorting.BubbleSort();
+            int[] nums = { 5, 10, 3, 2, 4 };
+            bubblesort.sort(nums);
+        }
+
+        static void Citadel()
+        {
+            Algorithms.Citadel.Citadel citadel = new Algorithms.Citadel.Citadel();
+            string str=  citadel.NonRepeativeChar();
+            Console.Write("First non repeative char {0}", str); 
+        }
+
       
 		
     }

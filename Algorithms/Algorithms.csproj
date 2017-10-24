@@ -12,6 +12,8 @@
     <Folder Include="Amazon\" />
     <Folder Include="CrakingThecoding\" />
     <Folder Include="Cassandra\" />
+    <Folder Include="Sorting\" />
+    <Folder Include="Citadel\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
