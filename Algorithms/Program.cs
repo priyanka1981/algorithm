@@ -4,10 +4,10 @@ namespace Algorithms
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Citadel();
-        }
+       // static void Main(string[] args)
+        //{
+          //  Citadel();
+       // }
 
         static void Tree()
         {
