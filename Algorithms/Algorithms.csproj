@@ -15,6 +15,7 @@
     <Folder Include="Sorting\" />
     <Folder Include="Citadel\" />
     <Folder Include="Threading\" />
+    <Folder Include="Immutable\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

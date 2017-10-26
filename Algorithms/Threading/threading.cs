@@ -19,7 +19,8 @@ namespace Algorithms.Threading
         private static Semaphore _pool;
         private static int _padding;
 
-
+        static readonly object FirstObject = new object();
+        static readonly object SecondObject = new object();
         public threading()
         {
         }
@@ -48,19 +49,31 @@ namespace Algorithms.Threading
             //      reads, writes, readerTimeouts, writerTimeouts);
             //Console.Write("Press ENTER to exit... ");
             //Console.ReadLine();
-            _pool = new Semaphore(0, 3);
-            for (int i = 0; i <= 5;i++)
+            //_pool = new Semaphore(0, 3);
+            //for (int i = 0; i <= 5;i++)
+            //{
+            //    Thread t = new Thread(new ParameterizedThreadStart(Worker));
+            //    t.Start(i);
+            //}
+
+            //Thread.Sleep(500);
+            //Console.WriteLine("Main thread calls Release(3).");
+            //_pool.Release(3);
+
+            //Console.WriteLine("Main thread exits.");
+            Thread t = new Thread(ThreadJob);
+            t.Start();
+            Thread.Sleep(1500);
+            lock(SecondObject)
             {
-                Thread t = new Thread(new ParameterizedThreadStart(Worker));
-                t.Start(i);
+                Console.WriteLine("Locking second Object from main....");
+                lock (FirstObject)
+                {
+                    Console.WriteLine("Locking first object from main...");
+                }
             }
 
-            Thread.Sleep(500);
-            Console.WriteLine("Main thread calls Release(3).");
-            _pool.Release(3);
-
-            Console.WriteLine("Main thread exits.");
-
+            Console.ReadKey();
         }
 
         static void ThreadProc()
@@ -228,5 +241,21 @@ namespace Algorithms.Threading
             Console.WriteLine("Thread {0} previous semaphore count: {1}",
                 num, _pool.Release());
         }
+
+      static void ThreadJob()
+        {
+            lock(FirstObject)
+            {
+                
+                Console.WriteLine("Locking on First Object from first......");
+                Thread.Sleep(1000);
+                lock(SecondObject)
+                {
+                    Console.WriteLine("Locking on second object from first.....");
+                }
+                       
+            }
+        }
+
     }
 }
