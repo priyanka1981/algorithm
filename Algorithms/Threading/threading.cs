@@ -25,56 +25,56 @@ namespace Algorithms.Threading
         {
         }
 
-        static void Main(string[] args)
-        {
-            // Start a series of threads to randomly read from and
-            // write to the shared resource.
-            //Thread[] t = new Thread[numThreads];
-            //for (int i = 0; i < numThreads; i++)
-            //{
-            //    t[i] = new Thread(new ThreadStart(ThreadProc));
-            //    t[i].Name = new String(Convert.ToChar(i + 65), 1);
-            //    t[i].Start();
-            //    if (i > 10)
-            //        Thread.Sleep(300);
-            //}
+        //static void Main(string[] args)
+        //{
+        //    // Start a series of threads to randomly read from and
+        //    // write to the shared resource.
+        //    //Thread[] t = new Thread[numThreads];
+        //    //for (int i = 0; i < numThreads; i++)
+        //    //{
+        //    //    t[i] = new Thread(new ThreadStart(ThreadProc));
+        //    //    t[i].Name = new String(Convert.ToChar(i + 65), 1);
+        //    //    t[i].Start();
+        //    //    if (i > 10)
+        //    //        Thread.Sleep(300);
+        //    //}
 
-            //// Tell the threads to shut down and wait until they all finish.
-            //running = false;
-            //for (int i = 0; i < numThreads; i++)
-            //    t[i].Join();
+        //    //// Tell the threads to shut down and wait until they all finish.
+        //    //running = false;
+        //    //for (int i = 0; i < numThreads; i++)
+        //    //    t[i].Join();
 
-            //// Display statistics.
-            //Console.WriteLine("\n{0} reads, {1} writes, {2} reader time-outs, {3} writer time-outs.",
-            //      reads, writes, readerTimeouts, writerTimeouts);
-            //Console.Write("Press ENTER to exit... ");
-            //Console.ReadLine();
-            //_pool = new Semaphore(0, 3);
-            //for (int i = 0; i <= 5;i++)
-            //{
-            //    Thread t = new Thread(new ParameterizedThreadStart(Worker));
-            //    t.Start(i);
-            //}
+        //    //// Display statistics.
+        //    //Console.WriteLine("\n{0} reads, {1} writes, {2} reader time-outs, {3} writer time-outs.",
+        //    //      reads, writes, readerTimeouts, writerTimeouts);
+        //    //Console.Write("Press ENTER to exit... ");
+        //    //Console.ReadLine();
+        //    //_pool = new Semaphore(0, 3);
+        //    //for (int i = 0; i <= 5;i++)
+        //    //{
+        //    //    Thread t = new Thread(new ParameterizedThreadStart(Worker));
+        //    //    t.Start(i);
+        //    //}
 
-            //Thread.Sleep(500);
-            //Console.WriteLine("Main thread calls Release(3).");
-            //_pool.Release(3);
+        //    //Thread.Sleep(500);
+        //    //Console.WriteLine("Main thread calls Release(3).");
+        //    //_pool.Release(3);
 
-            //Console.WriteLine("Main thread exits.");
-            Thread t = new Thread(ThreadJob);
-            t.Start();
-            Thread.Sleep(1500);
-            lock(SecondObject)
-            {
-                Console.WriteLine("Locking second Object from main....");
-                lock (FirstObject)
-                {
-                    Console.WriteLine("Locking first object from main...");
-                }
-            }
+        //    //Console.WriteLine("Main thread exits.");
+        //    Thread t = new Thread(ThreadJob);
+        //    t.Start();
+        //    Thread.Sleep(1500);
+        //    lock(SecondObject)
+        //    {
+        //        Console.WriteLine("Locking second Object from main....");
+        //        lock (FirstObject)
+        //        {
+        //            Console.WriteLine("Locking first object from main...");
+        //        }
+        //    }
 
-            Console.ReadKey();
-        }
+        //    Console.ReadKey();
+        //}
 
         static void ThreadProc()
         {

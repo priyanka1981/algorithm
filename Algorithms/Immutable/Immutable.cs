@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Algorithms.Immutable
+namespace Algorithms.Age
 {
     public  sealed  class Age
     {

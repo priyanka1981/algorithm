@@ -16,6 +16,7 @@
     <Folder Include="Citadel\" />
     <Folder Include="Threading\" />
     <Folder Include="Immutable\" />
+    <Folder Include="polymorphism\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
