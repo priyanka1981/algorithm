@@ -17,6 +17,7 @@
     <Folder Include="Threading\" />
     <Folder Include="Immutable\" />
     <Folder Include="polymorphism\" />
+    <Folder Include="LinkList\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

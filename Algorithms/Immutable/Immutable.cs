@@ -8,7 +8,7 @@ namespace Algorithms.Age
         private Age(){}
         private Age(int age)
         {
-            age = age;
+            this.age = age;
         }
 
         private static Age of(int age) {
