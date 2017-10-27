@@ -8,10 +8,10 @@ namespace Algorithms.General
         {
         }
 
-        static void Main(string[] args)
-        {
-            FindUnsortedArrayMaxOccrance();
-        }
+        //static void Main(string[] args)
+        //{
+        //    FindUnsortedArrayMaxOccrance();
+        //}
 
         static  void FindUnsortedArrayMaxOccrance()
         {
@@ -41,10 +41,7 @@ namespace Algorithms.General
 
         }
 
-        static void cycle_single_linklist()
-        {
-            LinkedList<int> link_list = new LinkedList<int>();
-            link_list.
-        }
+
+
     }
 }
