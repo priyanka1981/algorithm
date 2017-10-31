@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Diagnostics;
+
 namespace Algorithms.General
 {
     public class General
@@ -176,6 +178,43 @@ namespace Algorithms.General
                 n &= (n - 1);
             }
             return count;
+        }
+
+        public void isPrime()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            Console.Write("Enter a Number : ");
+            int num;
+            num = Convert.ToInt32(Console.ReadLine());
+            // Console.WriteLine("Time when entering the method {0}", ); 
+            int k;
+            k = 0;
+            bool result = true;
+            for (int i = 2; i <= num / 2;i++)
+            {
+                if (num % i == 0)
+                {
+                    result = false;
+                    break;
+                }
+            }
+            if (result)
+            {
+                Console.WriteLine("Entered Number is a Prime Number and the Largest Factor is {0}", num);
+            }
+            else
+            {
+                Console.WriteLine("Not a Prime Number");
+            }
+            sw.Stop();
+            Console.WriteLine("Time when exiting the method {0}", sw.ElapsedMilliseconds); 
+            Console.ReadLine();
+        }
+
+        public void isPrimeRecurrsive(int n)
+        {
+            
         }
 
 }

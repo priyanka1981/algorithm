@@ -60,7 +60,7 @@ namespace Algorithms.Tree
 					// REVISIT
 					// with every call to addChild on the right-node, root elements goes one level higher, and this node goes one down
 					root.height += 1;
-					node_1.left_child.height += 1;
+					node_1.right_child.height += 1;
 					node.depth += 1;
 					addChild(node_1.getRight_child(), node);
 				}

@@ -11,9 +11,15 @@ namespace Algorithms.Amazon
         {
         }
 
-        public bool isBalanceBraces(string str)
+        static void Main(string[] args)
         {
-            
+            // isBalanceBraces("}][}}(}][))]");
+            isBalanceBraces("()[]{[[[]]]}");
+        }
+
+        public static bool isBalanceBraces(string str)
+        {
+            //}][}}(}][))]
             Dictionary<char, char> dicSet = new Dictionary<char,char>();
             dicSet.Add(')', '(');
             dicSet.Add(']', '[');
@@ -24,24 +30,39 @@ namespace Algorithms.Amazon
             hashset.Add('[');
             hashset.Add('{');
             hashset.Add('<');
+            hashset.Add(')');
+            hashset.Add(']');
+            hashset.Add('}');
+            hashset.Add('>');
             Stack<char> stack = new Stack<char>();
             foreach(char ch in str){
-                if(hashset.Contains(ch)){
-                   stack.Push(ch); 
-                }
-                else if(dicSet.ContainsKey(ch))
+                if (hashset.Contains(ch))
                 {
-                    char retChar = stack.Peek();
+                    if (dicSet.ContainsKey(ch) && stack.Count > 0)
+                    {
+                        char retChar = stack.Peek();
 
-                    //char ch_open = dicSet[ch];
+                        //char ch_open = dicSet[ch];
 
-                    if (retChar == dicSet[ch])
-                        stack.Pop();
+                        if (retChar == dicSet[ch])
+                            stack.Pop();
+                        else stack.Push(ch);
+                    } else {
+                        stack.Push(ch);
+                    }
+
                 }
             }
-            if (stack.Count > 0)
+            if (stack.Count > 0) {
+                Console.WriteLine("xxxxxxxxxxxxxx");
                 return false;
-            return true;
+            } else {
+                Console.WriteLine("yyyyyyyyyyyy");
+                return true;
+            }
+
+                
+           
         }
 
         public string CountAlphabets(string str)

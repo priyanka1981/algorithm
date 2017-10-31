@@ -4,10 +4,10 @@ namespace Algorithms
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            General();
-        }
+        //static void Main(string[] args)
+        //{
+        //    General();
+        //}
 
         static void Tree()
         {
@@ -97,17 +97,19 @@ namespace Algorithms
             //string stringToReverse = Console.ReadLine();
             //string strReverse = generalClass.Reverse(stringToReverse);
             //Console.WriteLine("Reverse String is {0}",strReverse);
-            string isAnagram = generalClass.isAnagram("icemam", "cinema");
-            generalClass.swapInteger(-6, 5);
-            generalClass.findPairSumToValue(4);
+            //string isAnagram = generalClass.isAnagram("icemam", "cinema");
+            //generalClass.swapInteger(-6, 5);
+            //generalClass.findPairSumToValue(4);
 
-            for (int i = 0; i < 5; i++)
-            {
-                Console.Write("{0} ", generalClass.Fibonnaci(i));
-            }
-            Console.ReadKey();
-            int l = generalClass.SparseBitcount(0);
-           int j=  generalClass.SparseBitcount(256);
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.Write("{0} ", generalClass.Fibonnaci(i));
+            //}
+            //Console.ReadKey();
+            //int l = generalClass.SparseBitcount(0);
+
+            //int j=  generalClass.SparseBitcount(256);
+            generalClass.isPrime();
 		}
 
         static void Amazon()

@@ -18,6 +18,8 @@
     <Folder Include="Immutable\" />
     <Folder Include="polymorphism\" />
     <Folder Include="LinkList\" />
+    <Folder Include="Memorization\" />
+    <Folder Include="OOPS\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

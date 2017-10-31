@@ -36,7 +36,7 @@ namespace Algorithms.LinkList
         //    //{
         //    //    MergeSortedList(node, linklist2.head);
         //    //}
-
+        //    FindNThToLastElement(2, linklist);
           
         //}
 
@@ -131,6 +131,19 @@ namespace Algorithms.LinkList
         //{
         //    return (IEnumerator)GetEnumerator();
         //}
+
+        static void FindNThToLastElement(int x,LinkList _linklist)
+        {
+            Node lag = _linklist.head;
+            Node lead = _linklist.head;
+            for (int i = 1; i < x; i++)
+                lead = lead.Next;
+            while(lead.Next !=null){
+                lag = lag.Next;
+                lead = lead.Next;
+            }
+            int value = lag.value;
+        }
         
       
     }
